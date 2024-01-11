@@ -1,2 +1,4 @@
 resources:
   - app.yaml
+  - appProject.yaml
+  - namespace.yaml

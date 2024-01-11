@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-app-gitops-00
-  namespace: openshift-gitops-operator
+  name: test-app-gitops-default
+  namespace: openshift-gitops
 spec:
-  project: default
+  project: test-gitops-default
   source:
     repoURL: 'https://github.com/aladrocMatiner/poc-ksops.git'
     targetRevision: HEAD
-    path: /
+    path: "./"
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: test-gitops-00
+    namespace: test-gitops-default
   syncPolicy:
     automated:
       prune: false
